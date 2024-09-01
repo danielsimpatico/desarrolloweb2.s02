@@ -1,0 +1,145 @@
+/* Estilos básicos para el cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menú de navegación */
+nav {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Ajuste para que el menú se envuelva en pantallas pequeñas */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 4px;
+}
+
+/* Contenedor principal */
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%; /* Cambiado a un porcentaje para adaptarse mejor a diferentes tamaños */
+    margin: 20px auto;
+}
+
+/* Estilo para el título y párrafo */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+p {
+    text-align: center;
+    color: #555;
+}
+
+/* Tabla de usuarios */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    font-size: 16px; /* Tamaño de fuente adaptable */
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+/* Botones */
+button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+button[type="button"] {
+    background-color: #d9534f;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Acciones de tabla */
+.table-actions button {
+    margin-right: 5px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    th, td {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button {
+        width: 100%; /* Botones se expanden a todo el ancho en pantallas pequeñas */
+        margin-top: 5px;
+    }
+
+    nav ul {
+        flex-direction: column; /* Menú de navegación se convierte en una columna */
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    th, td {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    button {
+        padding: 6px 10px;
+    }
+}

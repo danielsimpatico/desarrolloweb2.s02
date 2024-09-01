@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Proyectos</title>
+    <link rel="stylesheet" href="style.css"> <!-- Enlace a tu archivo de estilos CSS -->
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="usuarios.html">Usuarios</a></li>
+            <li><a href="proyectos.html">Proyectos</a></li>
+            <li><a href="tareas.html">Tareas</a></li>
+            <li><a href="informes.html">Informes</a></li>
+        </ul>
+    </nav>
+
+    <h1>Gestión de Proyectos</h1>
+
+    <!-- agregar un nuevo proyecto -->
+    <button id="addProjectBtn">Agregar Proyecto</button>
+
+    <!-- Tabla para mostrar los registros de la tabla proyectos -->
+    <table id="proyectosTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Fecha de Creación</th>
+                <th>Fecha de Inicio</th>
+                <th>Fecha de Fin</th>
+                <th>Estado</th>
+                <th>Usuario</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se insertarán los registros mediante JavaScript -->
+        </tbody>
+    </table>
+
+    
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Agregar Proyecto</h2>
+            <form id="projectForm">
+                <input type="hidden" id="id_proyecto">
+                <label for="nom_proyecto">Nombre:</label>
+                <input type="text" id="nom_proyecto" required>
+                <label for="desc_proyecto">Descripción:</label>
+                <textarea id="desc_proyecto" required></textarea>
+                <label for="fch_inicio_proy">Fecha de Inicio:</label>
+                <input type="date" id="fch_inicio_proy" required>
+                <label for="fch_fin_proy">Fecha de Fin:</label>
+                <input type="date" id="fch_fin_proy" required>
+                <label for="estado_proy">Estado:</label>
+                <select id="estado_proy" required>
+                    <option value="Activo">Activo</option>
+                    <option value="En Proceso">En Proceso</option>
+                    <option value="Completado">Completado</option>
+                </select>
+                <label for="id_usuario">Usuario:</label>
+                <select id="id_usuario" required>
+                   
+                </select>
+                <button type="submit" id="saveProjectBtn">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="proyectos.js"></script> 
+</body>
+</html>

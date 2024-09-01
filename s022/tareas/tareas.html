@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Tareas</title>
+    <link rel="stylesheet" href="adaptable.css"> 
+    <link rel="stylesheet" href="usuarios.css">
+    <link rel="stylesheet" href="style.css">
+    
+    
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="usuarios.html">Usuarios</a></li>
+            <li><a href="proyectos.html">Proyectos</a></li>
+            <li><a href="tareas.html">Tareas</a></li>
+            <li><a href="informes.html">Informes</a></li>
+        </ul>
+    </nav>
+
+    <h1>Gestión de Tareas</h1>
+
+    <!-- Botón para agregar una nueva tarea -->
+    <button id="addTaskBtn">Agregar Tarea</button>
+
+    <!-- Tabla para mostrar los registros de la tabla tareas -->
+    <table id="tareasTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Fecha de Creación</th>
+                <th>Fecha de Inicio</th>
+                <th>Fecha de Fin</th>
+                <th>Prioridad</th>
+                <th>Estado</th>
+                <th>Proyecto</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se insertarán los registros mediante JavaScript -->
+        </tbody>
+    </table>
+
+    <!-- Formulario modal para agregar/editar tareas -->
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Agregar Tarea</h2>
+            <form id="taskForm">
+                <input type="hidden" id="id_tarea">
+                <label for="nom_tarea">Nombre:</label>
+                <input type="text" id="nom_tarea" required>
+                <label for="desc_tarea">Descripción:</label>
+                <textarea id="desc_tarea" required></textarea>
+                <label for="fch_creacion_tarea">Fecha de Creación:</label>
+                <input type="date" id="fch_creacion_tarea" required>
+                <label for="fch_inicio_tarea">Fecha de Inicio:</label>
+                <input type="date" id="fch_inicio_tarea" required>
+                <label for="fch_final_tarea">Fecha de Fin:</label>
+                <input type="date" id="fch_final_tarea" required>
+                <label for="prioridad_tarea">Prioridad:</label>
+                <select id="prioridad_tarea" required>
+                    <option value="Alta">Alta</option>
+                    <option value="Media">Media</option>
+                    <option value="Baja">Baja</option>
+                </select>
+                <label for="estado_tarea">Estado:</label>
+                <select id="estado_tarea" required>
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="En Progreso">En Progreso</option>
+                    <option value="Completado">Completado</option>
+                </select>
+                <label for="id_proyecto">Proyecto:</label>
+                <select id="id_proyecto" required>
+                    <!-- Se llenará con los proyectos disponibles desde la base de datos -->
+                </select>
+                <button type="submit" id="saveTaskBtn">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="tareas.js"></script> <!-- Enlace a tu archivo de JavaScript -->
+</body>
+</html>

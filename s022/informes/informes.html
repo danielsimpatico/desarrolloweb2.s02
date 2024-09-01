@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informes de Proyectos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .btn-print {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-print:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Informes de Proyectos</h1>
+    <table id="informesTable">
+        <thead>
+            <tr>
+                <th>ID Informe</th>
+                <th>Nombre del Proyecto</th>
+                <th>Fecha del Informe</th>
+                <th>Progreso</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se llenarán los informes desde JavaScript -->
+        </tbody>
+    </table>
+
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', loadInformes);
+
+        function loadInformes() {
+            fetch('getInformes.php')
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody = document.querySelector('#informesTable tbody');
+                    tableBody.innerHTML = '';
+
+                    data.forEach(informe => {
+                        const row = document.createElement('tr');
+
+                        row.innerHTML = `
+                            <td>${informe.id_informe}</td>
+                            <td>${informe.nom_proyecto}</td>
+                            <td>${informe.fch_informe}</td>
+                            <td>${informe.progreso}%</td>
+                            <td><button class="btn-print" 
+                                onclick="printInforme(${informe.id_informe})">Imprimir PDF</button></td>
+                        `;
+
+                        tableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error al cargar los informes:', error));
+        }
+
+        // Función para imprimir el informe en PDF
+        function printInforme(idInforme) {
+            window.open(`printInforme.php?id_informe=${idInforme}`, '_blank');
+        }
+    </script>
+</body>
+</html>
+

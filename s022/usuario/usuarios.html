@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios</title>
+    <link rel="stylesheet" href="../css/adaptable.css">
+    <link rel="stylesheet" href="../css/usuarios.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="perfil.html">Usuarios</a></li>
+            <li><a href="../proyectos/proyectos.html">Proyectos</a></li>
+            <li><a href="/tareas/tareas.html">Tareas</a></li>
+            <li><a href="informes/informes.html">Informes</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Gestión de Usuarios</h1>
+
+        <!-- Formulario para agregar o editar un usuario -->
+        <form id="userForm">
+            <input type="hidden" id="id_usuario" name="id_usuario">
+
+            <label for="nom_usuario">Nombre:</label>
+            <input type="text" id="nom_usuario" name="nom_usuario" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="pass" name="pass" required>
+
+            <button type="submit">Guardar</button>
+            <button type="button" id="cancelButton" style="display:none;">Cancelar</button>
+        </form>
+
+        <!-- Tabla para mostrar los registros de usuarios -->
+        <table id="usersTable">
+            <thead>
+                <tr>
+                    <th>ID Usuario</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Fecha de Creación</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--  registros de la base de datos -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="usuarios.js"></script>
+</body>
+</html>
